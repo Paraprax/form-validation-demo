@@ -21,7 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const thisMonth = new Date().getMonth();
     const thisYear = new Date().getFullYear();
 
-    return thisYear <= userYear && thisMonth <= userMonth;
+    return (
+      userYear.toString().length == 2 &&
+      userYear >= thisYear &&
+      userMonth.toString().length == 2 &&
+      userMonth >= thisMonth
+    );
   };
 
   ccForm.addEventListener("submit", (event) => {
