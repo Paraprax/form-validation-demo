@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const validLengths = [13, 16];
     const validStart = "4";
     const splitNumber = number.toString().split("");
-    console.log(splitNumber);
 
     return (
       splitNumber.length === validLengths[0] ||
@@ -60,8 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // TODO: validate CCN format
-  // TODO: check CVV length
   // TODO: prevent submission of invalid or incomplete payment info
   /* NOTE: Visa cards begin with a 4 && have 13 or 16 digits. 
   Mastercard cards begin w/ a 5 && have 16 digits. Amex begin with a 3, 
