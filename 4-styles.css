@@ -10,52 +10,61 @@ body {
     justify-content: center;
 }
 
-form {
-    max-width: 60%;
-    margin: 0 auto;
-}
+
 
 fieldset {
     border: 2px solid #ccc;
-    width: 90%;
     padding: 20px;
     border-radius: 8px;
     background-color: rgb(50, 80, 50);
-  }
+} 
+
+form {
+    max-width: 600px; /* Increase the width to accommodate larger inputs */
+    margin: 0 auto;
+}
+
+.form-field {
+    display: flex;
+    gap: 30%;
+    align-items: center;
+    width: 100%;
+    justify-content: end;
+}
+
+.form-field span {
+    flex-direction: column;
+    flex: 1; /* Ensure equal distribution of space for expiration and CVV */
+    max-width: 200px;
+}
 
 input {
-  padding: 10px;
-  font-size: 12pt;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  vertical-align: top;
+    padding: 10px;
+    font-size: 12pt;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%; /* Make inputs take up the full width of their container */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 input:focus {
-  border-color: #00ff00;
-  outline: none;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
-}
-
-input {
-  min-width: 90%;
-  color: white;
-  border: none;
-  cursor: pointer;
+    border-color: #00ff00;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
 label {
-  color: #cfffe0;
-  display: inline-block;
-  width: auto;
-  text-align: left;
-  margin-right: 10px;
-  font-size: 12pt;
+    color: #cfffe0;
+    display: inline-block;
+    text-align: left;
+    font-size: 12pt;
 }
 
 #submitButton {
     background-color: #17ad4c;
     max-width: 400px;
+    margin: 10px auto;
+    display: block; 
 }
 
 #submitButton:hover {

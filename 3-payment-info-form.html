@@ -18,48 +18,45 @@
       <fieldset>
         <legend>Credit Card Information</legend>
 
-        <div>
-          <label for="cardholder-name">* Name on card: </label><br />
-          <input
-            type="text"
-            id="cardholder-name"
-            name="cardholder-name"
-            placeholder="Cardholder's name"
-            required
-          />
-        </div>
+        <label for="cardholder-name">* Name on card: </label><br />
+        <input
+          type="text"
+          id="cardholder-name"
+          name="cardholder-name"
+          placeholder="Cardholder's name"
+          required
+        />
         <br />
-        <div>
-          <label for="cc-number">* Card number:</label><br />
-          <input
-            type="text"
-            id="cc-number"
-            name="cc-number"
-            placeholder="XXXX XXXX XXXX XXXX"
-            required
-          />
-        </div>
+        <label for="cc-number">* Card number:</label><br />
+        <input
+          type="text"
+          id="cc-number"
+          name="cc-number"
+          placeholder="XXXX XXXX XXXX XXXX"
+          required
+        />
         <br />
-        <div>
-          <label for="expiration">* Expiration date:</label><br />
-          <input
-            type="text"
-            id="expiration"
-            name="expiration"
-            placeholder="MM/YY"
-            required
-          />
-        </div>
-        <br />
-        <div>
-          <label for="cvv">* CVV:</label><br />
-          <input
-            type="text"
-            id="cvv"
-            name="cvv"
-            placeholder="eg. 123"
-            required
-          />
+        <div class="form-field" id="expiration-form">
+          <span>
+            <label for="expiration">* Expiration date:</label><br />
+            <input
+              type="text"
+              id="expiration"
+              name="expiration"
+              placeholder="MM/YY"
+              required
+            />
+          </span>
+          <span>
+            <label for="cvv">* CVV:</label><br />
+            <input
+              type="text"
+              id="cvv"
+              name="cvv"
+              placeholder="eg. 123"
+              required
+            />
+          </span>
         </div>
         <br />
         <input type="submit" id="submitButton" value="Submit" />
