@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const ccForm = document.getElementById("ccForm");
+  const ccNumberInput = document.getElementById("ccNumber");
   const submit = document.getElementById("submit");
-  const ccNumberForm = document.getElementById("ccNumber");
 
   const validateCCNumber = (number) => {
     const validLengths = [13, 16];
@@ -13,21 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   };
 
-  ccNumberForm.addEventListener("submit", (event) => {
+  ccForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const ccNumber = ccNumberForm.value.trim();
+    const ccNumber = ccNumberInput.value.trim();
     const isValid = validateCCNumber(ccNumber);
 
     if (isValid) {
-      ccNumberForm.submit();
+      ccForm.submit();
+      console.log("Submitted");
     } else {
       console.log("Invalid CC number:", ccNumber);
     }
-  });
-
-  submit.addEventListener("click", (event) => {
-    event.preventDefault();
   });
 
   // TODO: validate CCN format
