@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const ccForm = document.getElementById("ccForm");
-  const ccNumberInput = document.getElementById("ccNumber");
+  const ccForm = document.getElementById("cc-form");
+  const ccNumberInput = document.getElementById("cc-number");
+  const ccExpirationInput = document.getElementById("expiration");
   const submit = document.getElementById("submit");
 
   // number validation function:
@@ -27,9 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const ccNumber = ccNumberInput.value.trim();
-    const isValid = validateCCNumber(ccNumber);
+    const isValidNumber = validateCCNumber(ccNumber);
+    const ccDate = ccExpirationInput.value.trim();
+    const isValidExpDate = validateExpirationDate(ccDate);
 
-    if (isValid) {
+    if (isValidNumber && isValidExpDate) {
       ccForm.submit();
       console.log("Submitted");
     } else {
