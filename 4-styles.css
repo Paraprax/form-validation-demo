@@ -10,19 +10,18 @@ body {
 }
 
 form {
-    max-width: 900px;
-    min-width: 280px;
+    max-width: 60%;
     margin: 0 auto;
 }
 
 fieldset {
     border: 2px solid #ccc;
+    width: 90%;
     padding: 20px;
     border-radius: 8px;
     background-color: rgb(50, 80, 50);
   }
 
-/* Input field styling */
 input {
   padding: 10px;
   font-size: 12pt;
@@ -31,24 +30,17 @@ input {
   vertical-align: top;
 }
 
-/* Input focus styling */
 input:focus {
   border-color: #00ff00;
   outline: none;
   box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
-/* Submit button styling */
-input[type="submit"] {
-  width: auto;
-  background-color: #17ad4c;
+input {
+  min-width: 90%;
   color: white;
   border: none;
   cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #29cf63;
 }
 
 label {
@@ -56,4 +48,13 @@ label {
   width: auto;
   text-align: left;
   margin-right: 10px;
+}
+
+#submitButton {
+    background-color: #17ad4c;
+    max-width: 400px;
+}
+
+#submitButton:hover {
+    background-color: #29cf63;
 }
