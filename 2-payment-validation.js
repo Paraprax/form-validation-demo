@@ -3,6 +3,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   submit.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log("clicked");
   });
 });
