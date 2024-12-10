@@ -20,16 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // exp. date validation function:
   const validateExpirationDate = (userDate) => {
     const thisMonth = new Date().getMonth();
-    const thisYear = new Date().getFullYear();
+    const thisYear = parseInt(new Date().getYear().toString().substr(-2));
     const userMonthAndYear = userDate.split("/");
-    const userMonth = userMonthAndYear[0];
-    const userYear = userMonthAndYear[1];
+    const userMonth = parseInt(userMonthAndYear[0]);
+    const userYear = parseInt(userMonthAndYear[1]);
+    console.log(thisMonth);
+    console.log(thisYear);
+    console.log(userMonth);
+    console.log(userYear);
 
     return (
       userYear.length == 2 &&
-      parseInt(userYear) <= thisYear &&
+      userYear >= thisYear &&
       userMonth.length == 2 &&
-      parseInt(userMonth) <= thisMonth
+      userMonth >= thisMonth
     );
   };
 
@@ -53,9 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isValidNumber && isValidExpDate && isValidCVV) {
       ccForm.submit();
-      console.log("Submitted");
-    } else {
-      console.log("Invalid info");
+    } else if (!isValidNumber) {
+      alert("Number must be 13 or 16 digits long and begin with a 4");
+    } else if (!isValidExpDate) {
+      alert("Expiration date must not be in the past");
+    } else if (!isValidCVV) {
+      alert("CVV must be 3 digits long");
     }
   });
 });

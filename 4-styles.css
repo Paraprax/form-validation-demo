@@ -57,6 +57,10 @@ input:focus {
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
+.input-error {
+    font-size: 10pt;
+}
+
 label {
     color: #cfffe0;
     display: inline-block;
