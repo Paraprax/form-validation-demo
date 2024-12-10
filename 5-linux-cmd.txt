@@ -1,0 +1,12 @@
+Task 5: Linux:
+
+"You need to change the permissions of a file to ensure that only the owner
+can read and write to it. How would you do that? ○ Provide a command example."
+
+I'd run the command "chmod 600 [name of the file]" in my commandline from 
+within the file's parent directory, or from another director with the relative path
+of the file prefixing its name. 
+
+Just tried it on this file.
+
+Worked.

@@ -7,6 +7,7 @@ body {
 
 #page-header {
     font-family: 'Arial Black';
+    justify-content: center;
 }
 
 form {
@@ -44,10 +45,12 @@ input {
 }
 
 label {
+  color: #cfffe0;
   display: inline-block;
   width: auto;
   text-align: left;
   margin-right: 10px;
+  font-size: 12pt;
 }
 
 #submitButton {
