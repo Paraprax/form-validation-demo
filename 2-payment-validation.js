@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isValidNumber && isValidExpDate && isValidCVV) {
       ccForm.submit();
+      alert("Card successfully added!");
     } else if (!isValidNumber) {
       alert("Number must be 13 or 16 digits long and begin with a 4");
     } else if (!isValidExpDate) {
