@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return (
       userYear.length == 2 &&
-      parseInt(userYear) >= thisYear &&
+      parseInt(userYear) <= thisYear &&
       userMonth.length == 2 &&
-      parseInt(userMonth) >= thisMonth
+      parseInt(userMonth) <= thisMonth
     );
   };
 
@@ -41,12 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const ccDate = ccExpirationInput.value.trim();
     const isValidExpDate = validateExpirationDate(ccDate);
     console.log(isValidNumber);
+    console.log(isValidExpDate);
 
     if (isValidNumber && isValidExpDate) {
       ccForm.submit();
       console.log("Submitted");
     } else {
-      console.log("Invalid CC number:", ccNumber);
+      console.log("Invalid info");
     }
   });
 
