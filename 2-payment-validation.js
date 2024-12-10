@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ccForm = document.getElementById("cc-form");
   const ccNumberInput = document.getElementById("cc-number");
   const ccExpirationInput = document.getElementById("expiration");
+  const ccCVVinput = document.getElementById("cvv");
   const submit = document.getElementById("submit");
 
   // number validation function:
@@ -42,13 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const ccNumber = ccNumberInput.value.trim();
-    const isValidNumber = validateCCNumber(ccNumber);
     const ccDate = ccExpirationInput.value.trim();
+    const ccCVV = ccCVVinput.value.trim();
+    const isValidNumber = validateCCNumber(ccNumber);
     const isValidExpDate = validateExpirationDate(ccDate);
+    const isValidCVV = validateCVVNumber(ccCVV);
     console.log(isValidNumber);
     console.log(isValidExpDate);
+    console.log(isValidCVV);
 
-    if (isValidNumber && isValidExpDate) {
+    if (isValidNumber && isValidExpDate && isValidCVV) {
       ccForm.submit();
       console.log("Submitted");
     } else {
