@@ -33,6 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   };
 
+  //cvv validation function:
+  const validateCVVNumber = (cvv) => {
+    return cvv.length === 3;
+  };
+
   ccForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
