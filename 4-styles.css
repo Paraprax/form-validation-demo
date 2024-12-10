@@ -8,21 +8,24 @@ body {
 #page-header {
     font-family: 'Arial Black';
     justify-content: center;
+    margin-top: 50px;
+    margin-left: 10%;
 }
 
-
+form {
+    max-width: 600px; 
+    margin: 0 auto;
+}
 
 fieldset {
+    height: 430px;
     border: 2px solid #ccc;
     padding: 20px;
+    margin-top: 50px;
     border-radius: 8px;
     background-color: rgb(50, 80, 50);
 } 
 
-form {
-    max-width: 600px; /* Increase the width to accommodate larger inputs */
-    margin: 0 auto;
-}
 
 .form-field {
     display: flex;
@@ -34,17 +37,18 @@ form {
 
 .form-field span {
     flex-direction: column;
-    flex: 1; /* Ensure equal distribution of space for expiration and CVV */
+    flex: 1; 
     max-width: 200px;
 }
 
 input {
     padding: 10px;
+    margin-bottom: 25px;
     font-size: 12pt;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 100%; /* Make inputs take up the full width of their container */
-    box-sizing: border-box; /* Include padding in width calculation */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 input:focus {
@@ -62,9 +66,10 @@ label {
 
 #submitButton {
     background-color: #17ad4c;
-    max-width: 400px;
-    margin: 10px auto;
+    color: #cfffe0;
+    height: 60px;
     display: block; 
+    border: none;
 }
 
 #submitButton:hover {
