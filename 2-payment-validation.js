@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ccNumberInput = document.getElementById("ccNumber");
   const submit = document.getElementById("submit");
 
+  // number validation function:
   const validateCCNumber = (number) => {
     const validLengths = [13, 16];
     const validStart = "4";
@@ -12,6 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
       splitNumber.length === validLengths[0] ||
       (splitNumber.length === validLengths[1] && splitNumber[0] == validStart)
     );
+  };
+
+  // exp. date validation function:
+  const validateExpirationDate = (userMonth, userYear) => {
+    const thisMonth = new Date().getMonth();
+    const thisYear = new Date().getFullYear();
+
+    return thisYear <= userYear && thisMonth <= userMonth;
   };
 
   ccForm.addEventListener("submit", (event) => {
