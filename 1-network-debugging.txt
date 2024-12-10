@@ -1,0 +1,30 @@
+"You are debugging a web application and need to investigate an issue where a form submission fails. 
+How would you use the browser’s developer tools to identify the problem in network traffic?"
+
+
+First, I always just refresh the page and check for obvious front-end issues - did the page take ages to load, does the JS look broken in any way, etc - and check DevTools’ Console tab for any error message about the submission, eg. if it was missing anything, failed to go through at all, etc. If so, I’d look into fixing the broken form component on our frontend UI.
+
+Next - from personal experience - I’d visit the page in Incognito mode, ie. with none of my browser extensions in the mix, to confirm the error still occurred there. If not, time to look into which browser extension is the culprit and see what we can do to circumvent it.
+
+If none of the above, I’d then go to the Network tab in Chrome’s DevTools and check the Status column - if I see anything other than a 200 OK at a glance in the list, I’ll check the name to see if it’s the resource I was making the request to with this form. 
+
+Let’s say it is, and I got a 400 back - I would click it and:
+
+- check the Response tab to see if there’s an error message saying what my request did on the client side that was not permitted, and proceed from there if so - the ideal scenario, usually, from my dev/debugging POV; it could go in many different directions, but the 
+mystery is more-often-than-not solved at this point, and we can get to work either writing a new condition that accommodates cases like this, or fails as gracefully as possible.
+
+- if not, I’d check the Header and/or Payload tabs and start scanning the lines of my failed request to see if anything’s missing that our app is set up to need, but wasn’t indicated in an error message.
+
+If I got a 500 back:
+
+- again I’d click the resource in question, and check the Response tab to see what came back from the server for this one
+
+- this might be where I get in touch with our dedicated Back End team to verify that our database is up and running as normal and delve further into what the missing piece or crossed wire might be, or…
+
+- investigate the resource in question to make sure it’s in our local DB at all, or if external, to see if other requests are able to access(eg. using cURL requests in DevTools, or using the Postman, same as on many a web project back in the day whose instructions recommended now-deprecated API’s)
+
+If I got a 300 status back:
+
+- I’d see which part of our app was currently targeting the wrong URL and update it in our code, or update the code that sets it dynamically, etc. This is a high-level response as I don’t remember ever having to directly resolve one on the job - the few times they came up, they were usually red-herring symptoms of a variety unrelated deeper errors that needed to be isolated using breakpoints and identified from there, and resolved using any of the above approaches.
+
+And in all of the above, I’d take screenshots of any error codes in our Console and Network tabs that arose during the bug hunt, and share them with the team once it became clear a bug was going to take a while or require multiple devs/departments to resolve.
