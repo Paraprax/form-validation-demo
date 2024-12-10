@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const validLengths = [13, 16];
     const validStart = "4";
     const splitNumber = number.toString().split("");
+    console.log(splitNumber);
 
     return (
       splitNumber.length === validLengths[0] ||
@@ -17,15 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // exp. date validation function:
-  const validateExpirationDate = (userMonth, userYear) => {
+  const validateExpirationDate = (userDate) => {
     const thisMonth = new Date().getMonth();
     const thisYear = new Date().getFullYear();
+    const userMonthAndYear = userDate.split("/");
+    const userMonth = userMonthAndYear[0];
+    const userYear = userMonthAndYear[1];
 
     return (
-      userYear.toString().length == 2 &&
-      userYear >= thisYear &&
-      userMonth.toString().length == 2 &&
-      userMonth >= thisMonth
+      userYear.length == 2 &&
+      parseInt(userYear) >= thisYear &&
+      userMonth.length == 2 &&
+      parseInt(userMonth) >= thisMonth
     );
   };
 
@@ -36,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isValidNumber = validateCCNumber(ccNumber);
     const ccDate = ccExpirationInput.value.trim();
     const isValidExpDate = validateExpirationDate(ccDate);
+    console.log(isValidNumber);
 
     if (isValidNumber && isValidExpDate) {
       ccForm.submit();
