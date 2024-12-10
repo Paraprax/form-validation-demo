@@ -1,5 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
   const submit = document.getElementById("submit");
+  const ccNumberForm = document.getElementById("ccNumber");
+
+  const validateCCNumber = (number) => {
+    const validLengths = [13, 16];
+    const validStart = "4";
+    const splitNumber = number.toString().split("");
+
+    return (
+      splitNumber.length === validLengths[0] ||
+      (splitNumber.length === validLengths[1] && splitNumber[0] == validStart)
+    );
+  };
+
+  ccNumberForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const ccNumber = ccNumberForm.value.trim();
+    const isValid = validateCCNumber(ccNumber);
+
+    if (isValid) {
+      ccNumberForm.submit();
+    } else {
+      console.log("Invalid CC number:", ccNumber);
+    }
+  });
 
   submit.addEventListener("click", (event) => {
     event.preventDefault();
