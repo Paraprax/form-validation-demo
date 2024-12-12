@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const ccNumberInput = document.getElementById("cc-number");
   const ccExpirationInput = document.getElementById("expiration");
   const ccCVVinput = document.getElementById("cvv");
-  const submit = document.getElementById("submit");
 
   // number validation function:
   const validateCCNumber = (number) => {
