@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       case cardTypeOptions[0]: //visa
         return (
           splitNumber.length === validLengths[0] ||
-          (splitNumber.length === validLengths[1] &&
+          (splitNumber.length === validLengths[2] &&
             splitNumber[0] == validStarts[1])
         );
       case cardTypeOptions[1]: //mastercard
@@ -70,10 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ccForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const ccType = getCardType();
-    console.log(ccType);
+    // console.log(ccType);
     const ccNumber = ccNumberInput.value.trim();
     const ccDate = ccExpirationInput.value.trim();
     const ccCVV = ccCVVinput.value.trim();
+    console.log(validateCCNumber(ccType, ccNumber));
     const isValidNumber = validateCCNumber(ccType, ccNumber);
     const isValidExpDate = validateExpirationDate(ccDate);
     const isValidCVV = validateCVVNumber(ccCVV);
