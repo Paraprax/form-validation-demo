@@ -1,8 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const ccForm = document.getElementById("cc-form");
+  const cardType = document.getElementsByName("card-type");
   const ccNumberInput = document.getElementById("cc-number");
   const ccExpirationInput = document.getElementById("expiration");
   const ccCVVinput = document.getElementById("cvv");
+
+  // card type selection function:
+  const getCardType = () => {
+    for (i = 0; i < cardType.length; i++) {
+      if (cardType[i].checked) console.log(cardType[i].value);
+    }
+  };
 
   // number validation function:
   const validateCCNumber = (number) => {
@@ -37,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ccForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
+    getCardType();
     const ccNumber = ccNumberInput.value.trim();
     const ccDate = ccExpirationInput.value.trim();
     const ccCVV = ccCVVinput.value.trim();
