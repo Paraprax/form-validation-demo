@@ -70,11 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ccForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const ccType = getCardType();
-    // console.log(ccType);
     const ccNumber = ccNumberInput.value.trim();
     const ccDate = ccExpirationInput.value.trim();
     const ccCVV = ccCVVinput.value.trim();
-    console.log(validateCCNumber(ccType, ccNumber));
     const isValidNumber = validateCCNumber(ccType, ccNumber);
     const isValidExpDate = validateExpirationDate(ccDate);
     const isValidCVV = validateCVVNumber(ccCVV);
