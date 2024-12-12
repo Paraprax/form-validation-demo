@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       case cardTypeOptions[1]: //mastercard
         return (
-          splitNumber.length === validLengths[1] &&
+          splitNumber.length === validLengths[2] &&
           splitNumber[0] == validStarts[2]
         );
       case cardTypeOptions[2]: //amex
