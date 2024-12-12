@@ -18,7 +18,7 @@ form {
 }
 
 fieldset {
-    height: 430px;
+    height: 530px;
     border: 2px solid #ccc;
     padding: 20px;
     margin-top: 50px;
@@ -78,4 +78,25 @@ label {
 
 #submitButton:hover {
     background-color: #29cf63;
+}
+
+.card-type-group {
+  display: flex; 
+  gap: 20px; 
+  margin-top: 0px; 
+  margin-bottom: 18px;
+  justify-content: flex-start;
+}
+
+.card-type-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+  color: #cfffe0;
+  font-size: 12pt;
+}
+
+.card-type-group input {
+  margin: 0; 
+  accent-color: #29cf63; 
 }

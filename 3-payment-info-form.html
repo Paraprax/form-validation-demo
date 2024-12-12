@@ -17,6 +17,41 @@
     >
       <fieldset>
         <legend>Add a new card</legend>
+        <label for="card-type">Credit card:</label>
+        <div class="card-type-group">
+          <label for="visa">
+            <input
+              type="radio"
+              id="visa"
+              name="card-type"
+              value="visa"
+              required
+            />
+            Visa
+          </label>
+          <label for="mastercard">
+            <input
+              type="radio"
+              id="mastercard"
+              name="card-type"
+              value="mastercard"
+            />
+            Mastercard
+          </label>
+          <label for="amex">
+            <input type="radio" id="amex" name="card-type" value="amex" />
+            AmEx
+          </label>
+          <label for="discover">
+            <input
+              type="radio"
+              id="discover"
+              name="card-type"
+              value="discover"
+            />
+            Discover
+          </label>
+        </div>
         <label for="cardholder-name">* Name on card: </label><br />
         <input
           type="text"
